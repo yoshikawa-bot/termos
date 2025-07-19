@@ -2,114 +2,261 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Termos de Uso e Isenção de Responsabilidade do Yoshikawa Bot, um bot multifuncional para WhatsApp." />
   <title>Termos de Uso - Yoshikawa Bot</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    * {
       margin: 0;
-      padding: 2rem;
-      background-color: #f5f5f5;
-      color: #333;
-      line-height: 1.6;
+      padding: 0;
+      box-sizing: border-box;
     }
-    h1, h2 {
-      color: #111;
+
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #2d3748;
+      line-height: 1.7;
+      font-size: 16px;
     }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+
+    /* Header */
+    header {
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      text-align: center;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #1a73e8;
+    }
+
+    /* Main Content */
+    h1 {
+      font-size: 2rem;
+      color: #1a202c;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      color: #1a202c;
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    p, ul {
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    a {
+      color: #1a73e8;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    a:hover {
+      color: #1557b0;
+      text-decoration: underline;
+    }
+
+    code {
+      background-color: #e2e8f0;
+      padding: 0.2rem 0.4rem;
+      border-radius: 3px;
+      font-family: 'Roboto Mono', monospace;
+    }
+
     section {
-      margin-bottom: 2rem;
+      background-color: #ffffff;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      margin-bottom: 1.5rem;
     }
-    footer {
-      margin-top: 3rem;
+
+    .cta-button {
+      display: inline-block;
+      background-color: #1a73e8;
+      color: #ffffff;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 500;
       font-size: 0.9rem;
-      color: #777;
+      transition: background-color 0.3s;
+      text-align: center;
+    }
+
+    .cta-button:hover {
+      background-color: #1557b0;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #2d3748;
+      color: #e2e8f0;
+      padding: 1rem 0;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+
+      .header-content {
+        padding: 0 1rem;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+      }
+
+      section {
+        padding: 1rem;
+      }
+
+      .cta-button {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo {
+        font-size: 1.3rem;
+      }
+
+      .cta-button {
+        font-size: 0.85rem;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Termos de Uso e Isenção de Responsabilidade - Yoshikawa Bot</h1>
-  <p><strong>Última atualização:</strong> 19 de julho de 2025</p>
+  <header>
+    <div class="header-content">
+      <div class="logo">Yoshikawa Bot</div>
+    </div>
+  </header>
 
-  <section>
-    <h2>1. Sobre a Yoshikawa Bot</h2>
-    <p>
-      A Yoshikawa é um bot multifuncional para WhatsApp, desenvolvido por Kawa (<a href="https://instagram.com/kawalyansky" target="_blank">@kawalyansky</a>), com recursos como criação de figurinhas, download de músicas, streaming de filmes, séries e animes, entre outros comandos.
-    </p>
-    <p>
-      Desenvolvido em JavaScript (Node.js), atualmente na versão V5 (13/07/2025). O uso no privado é gratuito, com comandos extras para usuários VIP (consulte <code>!alugar</code>). Para ver todos os comandos disponíveis, use <code>!menu</code>.
-    </p>
-  </section>
+  <div class="container">
+    <h1>Termos de Uso e Isenção de Responsabilidade</h1>
+    <p><strong>Última atualização:</strong> 19 de julho de 2025</p>
 
-  <section>
-    <h2>2. Condições de Uso</h2>
-    <ul>
-      <li><strong>Uso permitido:</strong> Apenas para fins pessoais e legais, respeitando as regras do WhatsApp e a legislação vigente.</li>
-      <li><strong>Restrições:</strong> É proibido usar a Yoshikawa para atividades ilegais, ofensivas, envio de spam ou violação de direitos autorais.</li>
-      <li><strong>Grupos:</strong> O uso em grupos é de responsabilidade exclusiva dos usuários e administradores. O criador não exerce controle sobre essas interações.</li>
-    </ul>
-  </section>
+    <section>
+      <h2>1. Sobre a Yoshikawa Bot</h2>
+      <p>
+        A Yoshikawa é um bot multifuncional para WhatsApp, desenvolvido por Kawa (<a href="https://instagram.com/kawalyansky" target="_blank" aria-label="Instagram de Kawa">@kawalyansky</a>), com recursos como criação de figurinhas, download de músicas, streaming de filmes, séries e animes, entre outros comandos.
+      </p>
+    </section>
 
-  <section>
-    <h2>3. Isenção de Responsabilidade</h2>
-    <p>O criador, Kawa, não se responsabiliza por:</p>
-    <ul>
-      <li><strong>Uso indevido:</strong> Conteúdos ou ações geradas pelos usuários.</li>
-      <li><strong>Atividades em grupos:</strong> Interações, mensagens e mídias compartilhadas em grupos de WhatsApp.</li>
-      <li><strong>Conteúdo de terceiros:</strong> Qualidade, legalidade ou disponibilidade de mídias acessadas via comandos do bot.</li>
-      <li><strong>Funcionamento:</strong> Falhas técnicas, interrupções ou instabilidades do serviço.</li>
-      <li><strong>Danos:</strong> Quaisquer prejuízos, diretos ou indiretos, decorrentes do uso da ferramenta.</li>
-    </ul>
-  </section>
+    <section>
+      <h2>2. Condições de Uso</h2>
+      <ul>
+        <li><strong>Uso permitido:</strong> Apenas para fins pessoais e legais, respeitando as regras do WhatsApp e a legislação vigente.</li>
+        <li><strong>Restrições:</strong> É proibido usar a Yoshikawa para atividades ilegais, ofensivas, envio de spam ou violação de direitos autorais.</li>
+        <li><strong>Grupos:</strong> O uso em grupos é de responsabilidade exclusiva dos usuários e administradores. O criador não exerce controle sobre essas interações.</li>
+      </ul>
+    </section>
 
-  <section>
-    <h2>4. Propriedade Intelectual</h2>
-    <p>
-      Todo o código, funcionalidades e identidade da Yoshikawa Bot são de propriedade exclusiva de Kawa. Qualquer uso deve respeitar os direitos autorais e leis de propriedade intelectual.
-    </p>
-  </section>
+    <section>
+      <h2>3. Isenção de Responsabilidade</h2>
+      <p>O criador não se responsabiliza por:</p>
+      <ul>
+        <li><strong>Uso indevido:</strong> Conteúdos ou ações geradas pelos usuários.</li>
+        <li><strong>Atividades em grupos:</strong> Interações, mensagens e mídias compartilhadas em grupos de WhatsApp.</li>
+        <li><strong>Conteúdo de terceiros:</strong> Qualidade, legalidade ou disponibilidade de mídias acessadas via comandos do bot.</li>
+        <li><strong>Funcionamento:</strong> Falhas técnicas, interrupções ou instabilidades do serviço.</li>
+        <li><strong>Danos:</strong> Quaisquer prejuízos, diretos ou indiretos, decorrentes do uso da ferramenta.</li>
+      </ul>
+    </section>
 
-  <section>
-    <h2>5. Privacidade</h2>
-    <p>
-      A Yoshikawa processa apenas os dados estritamente necessários para execução dos comandos, sem armazenamento permanente ou uso comercial dessas informações.
-    </p>
-    <p>
-      Para dúvidas ou suporte, entre em contato via WhatsApp (+1 858 925-8076) ou Instagram <a href="https://instagram.com/kawalyansky" target="_blank">@kawalyansky</a>.
-    </p>
-  </section>
+    <section>
+      <h2>4. Propriedade Intelectual</h2>
+      <p>
+        Todo o código, funcionalidades e identidade da Yoshikawa Bot são de propriedade exclusiva do criador. Qualquer uso deve respeitar os direitos autorais e leis de propriedade intelectual.
+      </p>
+    </section>
 
-  <section>
-    <h2>6. Alterações</h2>
-    <p>
-      Estes termos podem ser atualizados a qualquer momento. Mudanças serão publicadas neste site. O uso contínuo da Yoshikawa Bot implica na aceitação das novas condições.
-    </p>
-  </section>
+    <section>
+      <h2>5. Privacidade</h2>
+      <p>
+        A Yoshikawa processa apenas os dados estritamente necessários para execução dos comandos, sem armazenamento permanente ou uso comercial dessas informações.
+      </p>
+    </section>
 
-  <section>
-    <h2>7. Contato</h2>
-    <p>
-      Dúvidas, sugestões ou suporte:
-      <br>📱 WhatsApp: +1 858 925-8076
-      <br>📷 Instagram: <a href="https://instagram.com/kawalyansky" target="_blank">@kawalyansky</a>
-    </p>
-  </section>
+    <section>
+      <h2>6. Alterações</h2>
+      <p>
+        Estes termos podem ser atualizados a qualquer momento. Mudanças serão publicadas neste site. O uso contínuo da Yoshikawa Bot implica na aceitação das novas condições.
+      </p>
+    </section>
 
-  <section>
-    <h2>8. Lei Aplicável</h2>
-    <p>
-      Estes termos são regidos pela legislação da jurisdição do criador (Kawa).
-    </p>
-  </section>
+    <section>
+      <h2>7. Contato</h2>
+      <p>
+        Dúvidas, sugestões ou suporte:<br>
+        WhatsApp: <a href="https://wa.me/18589258076" aria-label="WhatsApp">+1 858 925-8076</a><br>
+        Instagram: <a href="https://instagram.com/kawalyansky" target="_blank" aria-label="Instagram">@kawalyansky</a>
+      </p>
+      <a href="https://wa.me/18589258076" class="cta-button" aria-label="Contato via WhatsApp">Entrar em Contato</a>
+    </section>
 
-  <section>
-    <h2>Isenção Final</h2>
-    <p>
-      A Yoshikawa Bot é fornecida "no estado em que se encontra". O criador não se responsabiliza por mau uso, danos decorrentes, nem por qualquer consequência originada a partir do uso do bot. Use por sua conta e risco.
-    </p>
-  </section>
+    <section>
+      <h2>8. Lei Aplicável</h2>
+      <p>
+        Estes termos são regidos pela legislação da jurisdição do criador.
+      </p>
+    </section>
+
+    <section>
+      <h2>Isenção Final</h2>
+      <p>
+        A Yoshikawa Bot é fornecida "no estado em que se encontra". O criador não se responsabiliza por mau uso, danos decorrentes, nem por qualquer consequência originada a partir do uso do bot.
+      </p>
+    </section>
+  </div>
 
   <footer>
-    &copy; 2025 Yoshikawa Bot · Desenvolvido por Kawa
+    <p>© 2025 Yoshikawa Bot · Todos os direitos reservados.</p>
   </footer>
 </body>
 </html>
