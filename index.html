@@ -3,21 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Termos de Uso e Isenção de Responsabilidade da Yoshikawa Bot, um bot multifuncional para WhatsApp." />
+  <meta name="description" content="Termos de Uso e Isenção de Responsabilidade da Yoshikawa Bot" />
   <title>Termos de Uso - Yoshikawa Bot</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --secondary: #64748b;
+      --dark: #1e293b;
+      --light: #f8fafc;
+      --border: #e2e8f0;
+      --card-bg: #ffffff;
+      --accent: #f59e0b;
+      --text: #1e293b;
+      --bg: #f8fafc;
+      --footer-bg: #1e293b;
+      --footer-text: #f1f5f9;
+    }
+
+    [data-theme="dark"] {
+      --primary: #3b82f6;
+      --primary-dark: #2563eb;
+      --secondary: #94a3b8;
+      --dark: #f1f5f9;
+      --light: #0f172a;
+      --border: #334155;
+      --card-bg: #1e293b;
+      --accent: #f59e0b;
+      --text: #f1f5f9;
+      --bg: #0f172a;
+      --footer-bg: #0f172a;
+      --footer-text: #cbd5e1;
+    }
+    
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      transition: background-color 0.3s, color 0.3s;
     }
 
     body {
-      font-family: 'Roboto', Arial, sans-serif;
-      background-color: #f8f9fa;
-      color: #2d3748;
-      line-height: 1.7;
+      font-family: 'Inter', Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
       font-size: 16px;
     }
 
@@ -27,41 +59,95 @@
       padding: 1.5rem;
     }
 
-    /* Header */
     header {
-      background-color: #ffffff;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      padding: 1rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      padding: 1.5rem 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     .header-content {
       max-width: 900px;
       margin: 0 auto;
       padding: 0 1.5rem;
-      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     .logo {
       font-size: 1.8rem;
       font-weight: 700;
-      color: #1a73e8;
     }
 
-    /* Main Content */
-    h1 {
-      font-size: 2rem;
-      color: #1a202c;
-      margin-bottom: 1rem;
+    .beta-tag {
+      background-color: var(--accent);
+      color: white;
+      font-size: 0.7rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      margin-left: 0.5rem;
+      vertical-align: super;
     }
 
-    h2 {
-      font-size: 1.5rem;
-      color: #1a202c;
-      margin-top: 1.5rem;
+    .theme-toggle {
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .theme-toggle:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: scale(1.05);
+    }
+
+    .page-title {
+      font-size: 2.2rem;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .last-update {
+      text-align: center;
+      color: var(--secondary);
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+    }
+
+    .section {
+      background-color: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      margin-bottom: 1.5rem;
+      border-left: 4px solid var(--primary);
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      color: var(--text);
       margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .section-title::before {
+      content: "";
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background-color: var(--primary);
+      border-radius: 50%;
+      margin-right: 10px;
     }
 
     p, ul {
@@ -74,61 +160,79 @@
 
     li {
       margin-bottom: 0.5rem;
+      position: relative;
     }
 
-    a {
-      color: #1a73e8;
-      text-decoration: none;
-      transition: color 0.3s;
+    li::marker {
+      color: var(--primary);
     }
 
-    a:hover {
-      color: #1557b0;
-      text-decoration: underline;
+    .highlight {
+      background-color: var(--light);
+      padding: 1rem;
+      border-radius: 6px;
+      border-left: 3px solid var(--primary);
+      margin: 1rem 0;
     }
 
     code {
-      background-color: #e2e8f0;
+      background-color: var(--light);
       padding: 0.2rem 0.4rem;
-      border-radius: 3px;
-      font-family: 'Roboto Mono', monospace;
+      border-radius: 4px;
+      font-family: 'Inter', monospace;
+      font-size: 0.9rem;
+      color: var(--primary-dark);
     }
 
-    section {
-      background-color: #ffffff;
-      padding: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-      margin-bottom: 1.5rem;
+    .contact-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
     }
 
-    .cta-button {
-      display: inline-block;
-      background-color: #1a73e8;
-      color: #ffffff;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
+    .contact-button {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background-color: var(--primary);
+      color: white;
+      padding: 0.7rem 1.2rem;
+      border-radius: 6px;
       text-decoration: none;
       font-weight: 500;
-      font-size: 0.9rem;
-      transition: background-color 0.3s;
-      text-align: center;
+      transition: all 0.3s;
+      flex: 1;
+      min-width: 200px;
+      justify-content: center;
     }
 
-    .cta-button:hover {
-      background-color: #1557b0;
+    .contact-button:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
     }
 
-    /* Footer */
+    .contact-button.email {
+      background-color: var(--secondary);
+    }
+
+    .contact-button.email:hover {
+      background-color: #475569;
+    }
+
+    .contact-button i {
+      font-size: 1.1rem;
+    }
+
     footer {
-      background-color: #2d3748;
-      color: #e2e8f0;
-      padding: 1rem 0;
+      background-color: var(--footer-bg);
+      color: var(--footer-text);
+      padding: 1.5rem 0;
       text-align: center;
       font-size: 0.9rem;
+      margin-top: 2rem;
     }
 
-    /* Responsive Design */
     @media (max-width: 768px) {
       .container {
         padding: 1rem;
@@ -142,19 +246,24 @@
         font-size: 1.5rem;
       }
 
-      h1 {
+      .page-title {
         font-size: 1.8rem;
       }
 
-      h2 {
-        font-size: 1.3rem;
-      }
-
-      section {
+      .section {
         padding: 1rem;
       }
 
-      .cta-button {
+      .section-title {
+        font-size: 1.2rem;
+      }
+
+      .contact-buttons {
+        flex-direction: column;
+      }
+
+      .contact-button {
+        min-width: auto;
         width: 100%;
       }
     }
@@ -163,127 +272,126 @@
       .logo {
         font-size: 1.3rem;
       }
-
-      .cta-button {
-        font-size: 0.85rem;
-      }
     }
   </style>
 </head>
 <body>
   <header>
     <div class="header-content">
-      <div class="logo">Yoshikawa Bot</div>
+      <div class="logo">Yoshikawa Bot<span class="beta-tag">BETA</span></div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Alternar modo escuro/claro">
+        <i class="fas fa-moon"></i>
+      </button>
     </div>
   </header>
 
   <div class="container">
-    <h1>Termos de Uso e Isenção de Responsabilidade</h1>
-    <p><strong>Última atualização:</strong> 19 de setembro de 2025</p>
+    <h1 class="page-title">Termos de Uso</h1>
+    <p class="last-update"><strong>Última atualização:</strong> 09 de novembro de 2025</p>
 
-    <section>
-      <h2>1. Sobre a Yoshikawa Bot</h2>
-      <p>
-        A Yoshikawa Bot é uma ferramenta multifuncional para WhatsApp, desenvolvida por Kawa, que oferece recursos como criação de figurinhas, acesso a links públicos de conteúdo de streaming e outros comandos utilitários. O bot atua como um facilitador, e a responsabilidade sobre a legalidade e o uso do conteúdo acessado é inteiramente dos usuários.
-      </p>
-    </section>
+    <div class="section">
+      <h2 class="section-title">1. Sobre o Sistema</h2>
+      <p>Yoshikawa Bot é um sistema multifuncional para WhatsApp, desenvolvido por @kawalyansky, que utiliza a biblioteca oficial <code>@WhiskeySockets/Baileys</code>.</p>
+      <div class="highlight">
+        <p><strong>ATENÇÃO:</strong> O sistema está em fase BETA e recebe atualizações diárias. O uso no privado foi permanentemente desativado.</p>
+      </div>
+    </div>
 
-    <section>
-      <h2>2. Aceitação e Condições de Uso</h2>
-      <p>
-        Ao interagir com a Yoshikawa Bot, você expressa sua concordância integral com estes Termos de Uso. A versão mais recente dos termos pode ser consultada a qualquer momento através do comando <code>!termos</code>.
-      </p>
+    <div class="section">
+      <h2 class="section-title">2. Aceitação dos Termos</h2>
+      <p>Ao utilizar a Yoshikawa Bot, você concorda integralmente com estes termos:</p>
       <ul>
-        <li><strong>Uso Permitido:</strong> A ferramenta destina-se a fins pessoais e lícitos, em conformidade com as regras do WhatsApp e a legislação vigente.</li>
-        <li><strong>Restrições:</strong> É estritamente proibido utilizar o bot para atividades ilegais, disseminação de conteúdo ofensivo, spam, assédio ou violação de direitos autorais e de propriedade intelectual.</li>
-        <li><strong>Responsabilidade em Grupos:</strong> O uso do bot em grupos é de responsabilidade exclusiva de seus membros e administradores. O desenvolvedor não possui controle sobre as interações realizadas nesses ambientes.</li>
-        <li><strong>Suspensão de Acesso:</strong> O acesso ao bot poderá ser suspenso ou encerrado, sem aviso prévio, caso haja violação destes termos ou das políticas do WhatsApp.</li>
+        <li>Uso exclusivo para fins lícitos e em conformidade com as políticas do WhatsApp</li>
+        <li>Proibido uso para atividades ilegais, spam ou violação de direitos</li>
+        <li>Responsabilidade total do usuário pelo conteúdo e interações</li>
+        <li>Suspensão imediata em caso de violação destes termos</li>
       </ul>
-    </section>
+    </div>
 
-    <section>
-      <h2>3. Serviço de Aluguel</h2>
-      <p>
-        A Yoshikawa Bot pode ser adicionada a grupos privados mediante um modelo de assinatura (aluguel).
-      </p>
+    <div class="section">
+      <h2 class="section-title">3. Sistema de Bots Filhos</h2>
+      <p>Oferecemos a função de <strong>Bot Filho</strong> - uma bifurcação do bot principal que pode ser ligada ao seu próprio número.</p>
+      <div class="highlight">
+        <p><strong>RESPONSABILIDADE:</strong> O usuário contratante é <strong>totalmente responsável</strong> pelo bot filho e seu uso. O criador original apenas fornece o sistema e não supervisiona sua utilização.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">4. Sistema VIP e Loja</h2>
+      <p>O sistema de VIPS agora é <strong>mensal</strong> (não mais infinito). Todos os preços de compras, aluguéis e serviços devem ser consultados através do comando:</p>
+      <p><code>!loja</code></p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">5. Isenção de Responsabilidade</h2>
+      <p>O criador original <strong>só se responsabiliza pelo sistema em sua posse</strong>. Não nos responsabilizamos por:</p>
       <ul>
-        <li><strong>Período de Validade:</strong> O acesso ao bot é liberado por 30 dias, contados a partir da data de confirmação do pagamento.</li>
-        <li><strong>Renovação:</strong> Para garantir a continuidade do serviço, o contratante deve efetuar o pagamento da renovação em até 5 dias após o término do ciclo anterior.</li>
-        <li><strong>Política de Reembolso:</strong> Não haverá reembolso, total ou parcial, em caso de cancelamento por parte do contratante ou de suspensão do serviço por violação destes termos.</li>
-        <li><strong>Responsabilidade do Contratante:</strong> O contratante é o único responsável por assegurar que a utilização do bot no grupo esteja em conformidade com estes Termos de Uso.</li>
+        <li>Uso indevido pelos usuários</li>
+        <li>Conteúdo gerado ou acessado através do bot</li>
+        <li>Atividades em grupos ou bots filhos</li>
+        <li>Danos diretos ou indiretos decorrentes do uso</li>
       </ul>
-    </section>
-    
-    <section>
-      <h2>4. Sistema de Bots Filhos (Réplicas)</h2>
-      <p>
-        Oferecemos um sistema de "bots filhos", que funcionam como réplicas do bot principal, conectando-se diretamente a um servidor central Node.js através do comando <code>!yoshikawa</code>. Esses bots possuem todas as funcionalidades da versão principal e são disponibilizados em um modelo de aluguel mensal.
-      </p>
-      <p>
-        O criador não possui nenhuma responsabilidade ou supervisão sobre como ou onde o sistema de bots filhos é utilizado. O serviço consiste unicamente no fornecimento de réplicas do bot principal, que é, por sua natureza, uma ferramenta inofensiva. A responsabilidade por qualquer uso indevido, ilegal ou que viole os termos de serviço de plataformas de terceiros é exclusiva do contratante.
-      </p>
-    </section>
+    </div>
 
-    <section>
-      <h2>5. Isenção de Responsabilidade</h2>
-      <p>O desenvolvedor da Yoshikawa Bot não se responsabiliza por:</p>
-      <ul>
-        <li><strong>Uso Indevido:</strong> Quaisquer conteúdos, ações ou consequências geradas pelos usuários através do bot.</li>
-        <li><strong>Atividades em Grupos:</strong> Interações, mensagens ou mídias compartilhadas em grupos que utilizam o bot.</li>
-        <li><strong>Conteúdo de Terceiros:</strong> A qualidade, legalidade, disponibilidade ou segurança de mídias e links acessados através dos comandos.</li>
-        <li><strong>Disponibilidade do Serviço:</strong> Falhas técnicas, interrupções, instabilidades ou bloqueios impostos pela plataforma do WhatsApp.</li>
-        <li><strong>Danos:</strong> Quaisquer prejuízos diretos, indiretos, incidentais ou consequenciais, incluindo perda de dados ou lucros, decorrentes do uso ou da incapacidade de usar a ferramenta.</li>
-      </ul>
-    </section>
+    <div class="section">
+      <h2 class="section-title">6. Propriedade e Privacidade</h2>
+      <p>O código-fonte, funcionalidades e identidade são propriedade exclusiva do desenvolvedor. Processamos dados mínimos e temporários apenas para execução de comandos, em conformidade com a LGPD.</p>
+    </div>
 
-    <section>
-      <h2>6. Propriedade Intelectual</h2>
-      <p>
-        O código-fonte, as funcionalidades, o nome e a identidade visual da Yoshikawa Bot são propriedade exclusiva de seu desenvolvedor. É expressamente proibida a cópia, modificação, distribuição, engenharia reversa, descompilação ou qualquer tentativa de acesso não autorizado ao código-fonte do bot.
-      </p>
-    </section>
+    <div class="section">
+      <h2 class="section-title">7. Contato</h2>
+      <p>Para dúvidas, sugestões ou suporte técnico:</p>
+      <div class="contact-buttons">
+        <a href="https://wa.me/18589258076" class="contact-button">
+          <i class="fab fa-whatsapp"></i>
+          WhatsApp
+        </a>
+        <a href="mailto:yoshikawa_bot@proton.me" class="contact-button email">
+          <i class="fas fa-envelope"></i>
+          E-mail
+        </a>
+      </div>
+    </div>
 
-    <section>
-      <h2>7. Política de Privacidade</h2>
-      <p>
-        A Yoshikawa Bot processa dados mínimos e temporários — como número de telefone, ID de usuário e mensagens — estritamente para executar os comandos solicitados, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018). Os dados são descartados imediatamente após o processamento do comando e não são armazenados permanentemente ou utilizados para fins comerciais. Nenhuma informação será compartilhada com terceiros, exceto por exigência legal ou das políticas do WhatsApp. Para solicitar acesso ou exclusão de seus dados, entre em contato pelo e-mail: <a href="mailto:yoshikawa_bot@proton.me" aria-label="E-mail de suporte">yoshikawa_bot@proton.me</a>.
-      </p>
-    </section>
-
-    <section>
-      <h2>8. Alterações nos Termos</h2>
-      <p>
-        Estes termos podem ser atualizados periodicamente para refletir melhorias ou mudanças no serviço. As alterações entram em vigor no momento de sua publicação nesta página. O uso contínuo da Yoshikawa Bot após as modificações implica a aceitação das novas condições.
-      </p>
-    </section>
-
-    <section>
-      <h2>9. Contato</h2>
-      <p>
-        Para dúvidas, sugestões ou suporte técnico, utilize os canais abaixo:<br>
-        WhatsApp: <a href="https://wa.me/18589258076" aria-label="WhatsApp">+1 858 925-8076</a><br>
-        E-mail: <a href="mailto:yoshikawa_bot@proton.me" aria-label="E-mail de suporte">yoshikawa_bot@proton.me</a> (para solicitações formais e de privacidade).
-      </p>
-      <a href="https://wa.me/18589258076" class="cta-button" aria-label="Contato via WhatsApp">Entrar em Contato</a>
-    </section>
-
-    <section>
-      <h2>10. Legislação Aplicável</h2>
-      <p>
-        Estes Termos de Uso são regidos e interpretados de acordo com as leis da República Federativa do Brasil.
-      </p>
-    </section>
-
-    <section>
-      <h2>11. Isenção Final</h2>
-      <p>
-        A Yoshikawa Bot é uma ferramenta fornecida "no estado em que se encontra" (as is). O desenvolvedor se isenta de qualquer responsabilidade por mau uso, danos ou consequências adversas originadas a partir da utilização do bot. Use por sua conta e risco.
-      </p>
-    </section>
+    <div class="section">
+      <h2 class="section-title">8. Isenção Final</h2>
+      <p>A Yoshikawa Bot é fornecida "no estado em que se encontra". O desenvolvedor se isenta de qualquer responsabilidade por mau uso, danos ou consequências adversas. Use por sua conta e risco.</p>
+    </div>
   </div>
 
   <footer>
     <p>© 2025 Yoshikawa Bot · Todos os direitos reservados.</p>
   </footer>
+
+  <script>
+
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = themeToggle.querySelector('i');
+    
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      themeIcon.classList.remove('fa-moon');
+      themeIcon.classList.add('fa-sun');
+    }
+    
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      
+      if (currentTheme === 'dark') {
+        document.documentElement.removeAttribute('data-theme');
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+        localStorage.setItem('theme', 'light');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+  </script>
 </body>
 </html>
