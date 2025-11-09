@@ -9,21 +9,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
-      --primary: #2563eb;
-      --primary-dark: #1d4ed8;
-      --secondary: #64748b;
-      --dark: #1e293b;
-      --light: #f8fafc;
-      --border: #e2e8f0;
-      --card-bg: #ffffff;
-      --accent: #f59e0b;
-      --text: #1e293b;
-      --bg: #f8fafc;
-      --footer-bg: #1e293b;
-      --footer-text: #f1f5f9;
-    }
-
-    [data-theme="dark"] {
       --primary: #3b82f6;
       --primary-dark: #2563eb;
       --secondary: #94a3b8;
@@ -42,7 +27,6 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      transition: background-color 0.3s, color 0.3s;
     }
 
     body {
@@ -90,23 +74,26 @@
       vertical-align: super;
     }
 
-    .theme-toggle {
-      background: rgba(255, 255, 255, 0.2);
+    .profile-button {
+      background: none;
       border: none;
-      color: white;
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       cursor: pointer;
       transition: all 0.3s;
+      overflow: hidden;
     }
 
-    .theme-toggle:hover {
-      background: rgba(255, 255, 255, 0.3);
+    .profile-button:hover {
       transform: scale(1.05);
+    }
+
+    .profile-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
     }
 
     .page-title {
@@ -233,6 +220,16 @@
       margin-top: 2rem;
     }
 
+    .instagram-link {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .instagram-link:hover {
+      text-decoration: underline;
+    }
+
     @media (max-width: 768px) {
       .container {
         padding: 1rem;
@@ -279,9 +276,9 @@
   <header>
     <div class="header-content">
       <div class="logo">Yoshikawa Bot<span class="beta-tag">BETA</span></div>
-      <button class="theme-toggle" id="themeToggle" aria-label="Alternar modo escuro/claro">
-        <i class="fas fa-moon"></i>
-      </button>
+      <a href="https://yoshikawa-bot.github.io/site" class="profile-button">
+        <img src="https://yoshikawa-bot.github.io/cache/images/47126171.jpg" alt="Perfil" class="profile-image">
+      </a>
     </div>
   </header>
 
@@ -291,7 +288,7 @@
 
     <div class="section">
       <h2 class="section-title">1. Sobre o Sistema</h2>
-      <p>Yoshikawa Bot é um sistema multifuncional para WhatsApp, desenvolvido por @kawalyansky, que utiliza a biblioteca oficial <code>@WhiskeySockets/Baileys</code>.</p>
+      <p>Yoshikawa Bot é um sistema multifuncional para WhatsApp, desenvolvido por <a href="https://instagram.com/kawalyansky" class="instagram-link" target="_blank">@kawalyansky</a>, que utiliza a biblioteca oficial <code>@WhiskeySockets/Baileys</code>.</p>
       <div class="highlight">
         <p><strong>ATENÇÃO:</strong> O sistema está em fase BETA e recebe atualizações diárias. O uso no privado foi permanentemente desativado.</p>
       </div>
@@ -362,36 +359,5 @@
   <footer>
     <p>© 2025 Yoshikawa Bot · Todos os direitos reservados.</p>
   </footer>
-
-  <script>
-
-    const themeToggle = document.getElementById('themeToggle');
-    const themeIcon = themeToggle.querySelector('i');
-    
-    const savedTheme = localStorage.getItem('theme');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
-      document.documentElement.setAttribute('data-theme', 'dark');
-      themeIcon.classList.remove('fa-moon');
-      themeIcon.classList.add('fa-sun');
-    }
-    
-    themeToggle.addEventListener('click', () => {
-      const currentTheme = document.documentElement.getAttribute('data-theme');
-      
-      if (currentTheme === 'dark') {
-        document.documentElement.removeAttribute('data-theme');
-        themeIcon.classList.remove('fa-sun');
-        themeIcon.classList.add('fa-moon');
-        localStorage.setItem('theme', 'light');
-      } else {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        themeIcon.classList.remove('fa-moon');
-        themeIcon.classList.add('fa-sun');
-        localStorage.setItem('theme', 'dark');
-      }
-    });
-  </script>
 </body>
 </html>
