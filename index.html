@@ -21,6 +21,10 @@
       --bg: #0f172a;
       --footer-bg: #0f172a;
       --footer-text: #cbd5e1;
+      --header-bg: #161b22;
+      --header-border: #30363d;
+      --header-text: #f0f6fc;
+      --header-hover: #1f2937;
     }
     
     * {
@@ -43,11 +47,14 @@
       padding: 1.5rem;
     }
 
-    header {
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      color: white;
-      padding: 1.5rem 0;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Cabeçalho inspirado no GitHub - Versão Final */
+    .github-header {
+      background-color: var(--header-bg);
+      border-bottom: 1px solid var(--header-border);
+      padding: 0.75rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
     .header-content {
@@ -57,11 +64,40 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 1rem;
     }
 
-    .logo {
-      font-size: 1.8rem;
-      font-weight: 700;
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-shrink: 0;
+    }
+
+    .logo-image {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      object-fit: cover;
+      flex-shrink: 0;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+
+    .logo-image:hover {
+      transform: scale(1.05);
+    }
+
+    .logo-text {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo-name {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--header-text);
     }
 
     .beta-tag {
@@ -69,31 +105,35 @@
       color: white;
       font-size: 0.7rem;
       padding: 0.2rem 0.5rem;
-      border-radius: 4px;
-      margin-left: 0.5rem;
-      vertical-align: super;
+      border-radius: 12px;
+      font-weight: 500;
     }
 
-    .profile-button {
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .add-button {
       background: none;
-      border: none;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
+      border: 1px solid var(--header-border);
+      border-radius: 6px;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--header-text);
       cursor: pointer;
-      transition: all 0.3s;
-      overflow: hidden;
+      transition: all 0.2s;
+      font-size: 1.1rem;
     }
 
-    .profile-button:hover {
-      transform: scale(1.05);
-    }
-
-    .profile-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 50%;
+    .add-button:hover {
+      background-color: var(--header-hover);
+      border-color: var(--primary);
+      color: var(--primary);
     }
 
     .page-title {
@@ -239,8 +279,8 @@
         padding: 0 1rem;
       }
 
-      .logo {
-        font-size: 1.5rem;
+      .logo-name {
+        font-size: 1.1rem;
       }
 
       .page-title {
@@ -266,19 +306,57 @@
     }
 
     @media (max-width: 480px) {
-      .logo {
-        font-size: 1.3rem;
+      .logo-name {
+        font-size: 1rem;
+      }
+      
+      .logo-text {
+        flex-direction: row;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      
+      .add-button {
+        width: 28px;
+        height: 28px;
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .header-content {
+        gap: 0.5rem;
+      }
+      
+      .logo-name {
+        font-size: 0.9rem;
+      }
+      
+      .beta-tag {
+        font-size: 0.6rem;
+        padding: 0.15rem 0.4rem;
       }
     }
   </style>
 </head>
 <body>
-  <header>
+  <header class="github-header">
     <div class="header-content">
-      <div class="logo">Yoshikawa Bot<span class="beta-tag">BETA</span></div>
-      <a href="https://yoshikawa-bot.github.io/site" class="profile-button">
-        <img src="https://yoshikawa-bot.github.io/cache/images/47126171.jpg" alt="Perfil" class="profile-image">
-      </a>
+      <div class="logo-container">
+        <a href="https://yoshikawa-bot.github.io/site">
+          <img src="https://yoshikawa-bot.github.io/cache/images/47126171.jpg" alt="Yoshikawa Bot" class="logo-image">
+        </a>
+        <div class="logo-text">
+          <span class="logo-name">Yoshikawa</span>
+          <span class="beta-tag">BETA</span>
+        </div>
+      </div>
+      
+      <div class="header-right">
+        <button class="add-button">
+          <i class="fas fa-plus"></i>
+        </button>
+      </div>
     </div>
   </header>
 
