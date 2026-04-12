@@ -1,31 +1,41 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Termos de Uso e Isenção de Responsabilidade da Yoshikawa Bot" />
-  <title>Termos de Uso — Yoshikawa</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Termos de Uso e Isenção de Responsabilidade da Yoshikawa ESM">
+  <title>Termos de Uso — Yoshikawa ESM</title>
   <style>
-    :root {
-      --bg: #ffffff;
-      --bg-secondary: #f5f5f7;
-      --text-primary: #1d1d1f;
-      --text-secondary: #6e6e73;
-      --text-tertiary: #a1a1a6;
-      --border: #d2d2d7;
-      --border-subtle: #e8e8ed;
-      --accent: #0066cc;
-      --accent-hover: #004499;
-      --warn-bg: #fff9f0;
-      --warn-border: #f0a500;
-      --code-bg: #f5f5f7;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap');
 
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
+    }
+
+    :root {
+      color-scheme: light;
+
+      --bg:              #262624;
+      --bg-raised:       #1F1E1C;
+      --bg-card:         #30302E;
+      --bg-card-hover:   #383734;
+      --text:            #FAF9F5;
+      --text-muted:      #9D9A93;
+      --text-dark:       #1a1915;
+      --text-btn-hover:  #d4cfc0;
+      --text-dim:        rgba(232, 227, 213, 0.45);
+      --text-ghost:      rgba(232, 227, 213, 0.22);
+      --text-faint:      rgba(232, 227, 213, 0.38);
+      --text-pale:       rgba(232, 227, 213, 0.6);
+      --accent:          #DB7757;
+      --accent-bg:       rgba(219, 119, 87, 0.12);
+      --accent-bg-hover: rgba(219, 119, 87, 0.2);
+      --border:          rgba(232, 227, 213, 0.08);
+      --border-nav:      rgba(232, 227, 213, 0.1);
+      --border-btn:      rgba(232, 227, 213, 0.3);
+      --hover-bg:        rgba(232, 227, 213, 0.07);
     }
 
     html {
@@ -33,117 +43,121 @@
     }
 
     body {
-      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: var(--bg);
-      color: var(--text-primary);
-      line-height: 1.75;
-      font-size: 17px;
-      -webkit-font-smoothing: antialiased;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      min-height: 100vh;
     }
 
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: saturate(180%) blur(20px);
-      -webkit-backdrop-filter: saturate(180%) blur(20px);
-      border-bottom: 1px solid var(--border-subtle);
-    }
-
-    .nav-inner {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 0 22px;
-      height: 48px;
+    .nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      padding: 1.1rem 2rem;
+      border-bottom: 0.5px solid var(--border-nav);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: var(--bg);
     }
 
-    .nav-brand {
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--text-primary);
-      letter-spacing: -0.02em;
+    .nav-logo {
+      font-family: 'Instrument Serif', serif;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      color: var(--text);
       text-decoration: none;
     }
 
-    .nav-brand span {
-      font-weight: 300;
-      color: var(--text-secondary);
-      margin-left: 6px;
-      font-size: 0.9rem;
+    .nav-logo .highlight {
+      color: var(--accent);
     }
 
-    .nav-badge {
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-      border: 1px solid var(--border);
-      padding: 2px 7px;
-      border-radius: 20px;
+    .nav-back {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 5px 12px;
+      border-radius: 5px;
+      transition: color .2s, background .2s;
+    }
+
+    .nav-back:hover {
+      color: var(--text);
+      background: var(--hover-bg);
+    }
+
+    .nav-back svg {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
     .hero {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 80px 22px 60px;
-      border-bottom: 1px solid var(--border-subtle);
+      padding: 3.5rem 2rem 2.5rem;
+      border-bottom: 0.5px solid var(--border);
     }
 
     .hero-eyebrow {
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--text-tertiary);
-      margin-bottom: 16px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
     }
 
     .hero-title {
-      font-size: clamp(2.4rem, 5vw, 3.8rem);
-      font-weight: 300;
-      letter-spacing: -0.04em;
-      line-height: 1.1;
-      color: var(--text-primary);
-      margin-bottom: 20px;
+      font-family: 'Instrument Serif', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: 10px;
     }
 
-    .hero-title strong {
-      font-weight: 600;
+    .hero-title em {
+      font-style: italic;
+      color: var(--accent);
     }
 
     .hero-meta {
-      font-size: 0.9rem;
-      color: var(--text-tertiary);
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 300;
     }
 
     .layout {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 0 22px 100px;
       display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 60px;
-      align-items: start;
+      grid-template-columns: 210px 1fr;
     }
 
     .sidebar {
-      position: sticky;
-      top: 68px;
-      padding-top: 48px;
+      padding: 2.5rem 0 2.5rem 2rem;
+      border-right: 0.5px solid var(--border);
     }
 
-    .sidebar-title {
-      font-size: 0.7rem;
-      font-weight: 600;
+    .sidebar-inner {
+      position: sticky;
+      top: 6rem;
+    }
+
+    .sidebar-label {
+      font-size: 10px;
+      font-weight: 500;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--text-tertiary);
-      margin-bottom: 14px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      padding: 0 10px;
     }
 
     .sidebar-nav {
@@ -155,27 +169,27 @@
 
     .sidebar-nav a {
       display: block;
-      font-size: 0.88rem;
-      color: var(--text-secondary);
+      font-size: 13px;
+      color: var(--text-dim);
       text-decoration: none;
       padding: 5px 10px;
-      border-radius: 6px;
-      transition: background 0.15s, color 0.15s;
+      border-radius: 5px;
+      transition: color .2s, background .2s;
     }
 
     .sidebar-nav a:hover {
-      background: var(--bg-secondary);
-      color: var(--text-primary);
+      color: var(--text);
+      background: var(--hover-bg);
     }
 
     .content {
-      padding-top: 48px;
+      padding: 2.5rem 2rem 4rem;
     }
 
     .section {
-      padding-bottom: 52px;
-      border-bottom: 1px solid var(--border-subtle);
-      margin-bottom: 52px;
+      padding-bottom: 2.5rem;
+      border-bottom: 0.5px solid var(--border);
+      margin-bottom: 2.5rem;
     }
 
     .section:last-child {
@@ -184,193 +198,230 @@
       padding-bottom: 0;
     }
 
-    .section-number {
-      font-size: 0.72rem;
-      font-weight: 600;
+    .section-num {
+      font-size: 11px;
+      font-weight: 500;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--text-tertiary);
-      margin-bottom: 10px;
-      font-family: 'DM Mono', monospace;
+      color: var(--text-muted);
+      margin-bottom: 8px;
     }
 
     .section-title {
-      font-size: 1.5rem;
-      font-weight: 600;
-      letter-spacing: -0.025em;
-      color: var(--text-primary);
-      margin-bottom: 20px;
-      line-height: 1.25;
-    }
-
-    p {
-      color: var(--text-secondary);
-      margin-bottom: 16px;
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.4rem;
       font-weight: 400;
+      letter-spacing: 0.01em;
+      color: var(--text);
+      margin-bottom: 1rem;
     }
 
-    p:last-child {
+    .body-text {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.75;
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+
+    .body-text:last-child {
       margin-bottom: 0;
     }
 
-    ul {
+    .body-text a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 400;
+    }
+
+    .body-text a:hover {
+      text-decoration: underline;
+    }
+
+    .body-text strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .body-text code {
+      font-size: 0.88em;
+      background: var(--bg-card);
+      border: 0.5px solid var(--border-btn);
+      padding: 2px 7px;
+      border-radius: 4px;
+      color: var(--text);
+      font-family: 'SF Mono', 'Fira Code', monospace;
+    }
+
+    .item-list {
       list-style: none;
-      margin-bottom: 16px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 8px;
+      margin-bottom: 1rem;
     }
 
-    li {
+    .item-list li {
       display: flex;
       gap: 12px;
-      color: var(--text-secondary);
-      font-size: 0.97rem;
-    }
-
-    li::before {
-      content: "—";
-      color: var(--text-tertiary);
-      flex-shrink: 0;
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.65;
       font-weight: 300;
     }
 
-    .callout {
-      background: var(--bg-secondary);
-      border-radius: 12px;
-      padding: 18px 22px;
-      margin: 20px 0;
+    .item-list li::before {
+      content: "—";
+      color: var(--text-dim);
+      flex-shrink: 0;
     }
 
-    .callout.warn {
-      background: var(--warn-bg);
-      border-left: 3px solid var(--warn-border);
-      border-radius: 0 8px 8px 0;
+    .notice {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: var(--bg-card);
+      border-radius: 8px;
+      padding: 1rem 1.2rem;
+      margin: 1rem 0;
     }
 
-    .callout p {
-      margin: 0;
-      font-size: 0.93rem;
+    .notice-icon {
+      flex-shrink: 0;
+      width: 16px;
+      height: 16px;
+      margin-top: 2px;
     }
 
-    .callout strong {
-      color: var(--text-primary);
+    .notice-icon svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--accent);
+      fill: none;
+      stroke-width: 1.5;
     }
 
-    code {
-      font-family: 'DM Mono', 'SF Mono', monospace;
-      font-size: 0.85em;
-      background: var(--code-bg);
-      border: 1px solid var(--border-subtle);
-      padding: 2px 7px;
-      border-radius: 5px;
-      color: var(--text-primary);
+    .notice-text {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.65;
+      font-weight: 300;
     }
 
-    .link {
-      color: var(--accent);
-      text-decoration: none;
-      transition: color 0.15s;
+    .notice-text strong {
+      color: var(--text);
+      font-weight: 500;
     }
 
-    .link:hover {
-      color: var(--accent-hover);
-      text-decoration: underline;
+    .code-block {
+      display: inline-block;
+      font-size: 13px;
+      background: var(--bg-card);
+      border: 0.5px solid var(--border-btn);
+      padding: 6px 14px;
+      border-radius: 6px;
+      color: var(--text);
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      margin: 0.4rem 0;
     }
 
     .contact-group {
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      margin-top: 22px;
+      gap: 8px;
+      margin-top: 1.2rem;
     }
 
     .contact-item {
       display: flex;
       align-items: center;
-      gap: 14px;
-      padding: 16px 20px;
-      border: 1px solid var(--border);
-      border-radius: 12px;
+      gap: 12px;
+      background: var(--bg-card);
+      border-radius: 8px;
+      padding: 0.9rem 1.2rem;
       text-decoration: none;
-      color: var(--text-primary);
-      transition: background 0.15s, border-color 0.15s;
-      background: var(--bg);
+      transition: background .2s;
     }
 
     .contact-item:hover {
-      background: var(--bg-secondary);
-      border-color: var(--text-tertiary);
+      background: var(--bg-card-hover);
     }
 
-    .contact-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
+    .contact-icon-wrap {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
     }
 
-    .contact-icon.whatsapp {
+    .contact-icon-wrap.green {
       background: #25D366;
     }
 
-    .contact-icon.email {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border);
+    .contact-icon-wrap.neutral {
+      background: var(--bg-card-hover);
     }
 
-    .contact-icon svg {
-      width: 18px;
-      height: 18px;
+    .contact-icon-wrap svg {
+      width: 16px;
+      height: 16px;
     }
 
     .contact-label {
-      font-size: 0.95rem;
-      font-weight: 500;
+      font-size: 13px;
+      color: var(--text);
+      font-weight: 400;
     }
 
     .contact-detail {
-      font-size: 0.82rem;
-      color: var(--text-tertiary);
-      margin-top: 1px;
+      font-size: 11px;
+      color: var(--text-muted);
     }
 
     .contact-arrow {
       margin-left: auto;
-      color: var(--text-tertiary);
-      font-size: 1.1rem;
-      transition: transform 0.15s;
+      font-size: 16px;
+      color: var(--text-dim);
     }
 
-    .contact-item:hover .contact-arrow {
-      transform: translateX(3px);
-    }
-
-    footer {
-      background: var(--bg-secondary);
-      border-top: 1px solid var(--border-subtle);
-      padding: 32px 22px;
+    .footer {
       text-align: center;
+      padding: 2rem;
+      border-top: 0.5px solid var(--hover-bg);
+      margin-top: 1rem;
     }
 
-    .footer-inner {
-      max-width: 980px;
-      margin: 0 auto;
+    .footer-text {
+      font-size: 12px;
+      color: var(--text-ghost);
+      line-height: 1.9;
     }
 
-    .footer-inner p {
-      font-size: 0.82rem;
-      color: var(--text-tertiary);
-      margin: 0;
+    .footer-text a {
+      color: var(--text-faint);
+      text-decoration: none;
     }
 
-    @media (max-width: 740px) {
+    .footer-text a:hover {
+      color: var(--text-pale);
+    }
+
+    .footer-credit {
+      font-family: 'Instrument Serif', serif;
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    @media (max-width: 640px) {
+      .nav {
+        padding: 1.1rem 1.25rem;
+      }
+
       .layout {
         grid-template-columns: 1fr;
-        gap: 0;
       }
 
       .sidebar {
@@ -378,63 +429,69 @@
       }
 
       .hero {
-        padding: 52px 22px 40px;
+        padding: 2.5rem 1.25rem 2rem;
       }
 
-      .hero-title {
-        font-size: 2.2rem;
+      .content {
+        padding: 2rem 1.25rem 3rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <nav>
-    <div class="nav-inner">
-      <a href="https://yoshikawa-bot.github.io/site" class="nav-brand">
-        Yoshikawa<span>Bot</span>
-      </a>
-      <span class="nav-badge">Beta</span>
-    </div>
+  <nav class="nav">
+    <a href="https://yoshikawa-bot.github.io/site" class="nav-logo">
+      Yoshikawa <span class="highlight">ESM</span>
+    </a>
+    <a href="https://yoshikawa-bot.github.io/site" class="nav-back">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      Voltar
+    </a>
   </nav>
 
   <div class="hero">
     <p class="hero-eyebrow">Documentação Legal</p>
-    <h1 class="hero-title"><strong>Termos</strong> de Uso</h1>
+    <h1 class="hero-title">Termos de <em>Uso</em></h1>
     <p class="hero-meta">Última atualização: 21 de março de 2026</p>
   </div>
 
   <div class="layout">
     <aside class="sidebar">
-      <p class="sidebar-title">Nesta página</p>
-      <ul class="sidebar-nav">
-        <li><a href="#sobre">Sobre o Sistema</a></li>
-        <li><a href="#aceitacao">Aceitação dos Termos</a></li>
-        <li><a href="#bots-filhos">Bots Filhos</a></li>
-        <li><a href="#vip">VIP e Loja</a></li>
-        <li><a href="#isencao">Isenção de Responsabilidade</a></li>
-        <li><a href="#propriedade">Propriedade e Privacidade</a></li>
-        <li><a href="#contato">Contato</a></li>
-        <li><a href="#isencao-final">Isenção Final</a></li>
-      </ul>
+      <div class="sidebar-inner">
+        <p class="sidebar-label">Nesta página</p>
+        <ul class="sidebar-nav">
+          <li><a href="#sobre">Sobre o Sistema</a></li>
+          <li><a href="#aceitacao">Aceitação dos Termos</a></li>
+          <li><a href="#bots-filhos">Bots Filhos</a></li>
+          <li><a href="#vip">VIP e Loja</a></li>
+          <li><a href="#isencao">Isenção de Responsabilidade</a></li>
+          <li><a href="#propriedade">Propriedade e Privacidade</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a href="#isencao-final">Isenção Final</a></li>
+        </ul>
+      </div>
     </aside>
 
     <main class="content">
 
       <div class="section" id="sobre">
-        <p class="section-number">01</p>
+        <p class="section-num">01</p>
         <h2 class="section-title">Sobre o Sistema</h2>
-        <p>A Yoshikawa é um bot multifuncional para WhatsApp, desenvolvido por <a href="https://instagram.com/kawalyansky" class="link" target="_blank">@kawalyansky</a>, utilizando a biblioteca <code>@WhiskeySockets/Baileys</code>.</p>
-        <div class="callout warn">
-          <p><strong>Atenção:</strong> O bot está em fase Beta e recebe atualizações diárias. O uso no privado foi permanentemente desativado.</p>
+        <p class="body-text">A Yoshikawa é um bot multifuncional para WhatsApp, desenvolvido por <a href="https://instagram.com/kawalyansky" target="_blank" rel="noopener noreferrer">@kawalyansky</a>, utilizando a biblioteca <code>@WhiskeySockets/Baileys</code>.</p>
+        <div class="notice">
+          <div class="notice-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <p class="notice-text"><strong>Atenção:</strong> O bot está em fase Beta e recebe atualizações diárias. O uso no privado foi permanentemente desativado.</p>
         </div>
       </div>
 
       <div class="section" id="aceitacao">
-        <p class="section-number">02</p>
+        <p class="section-num">02</p>
         <h2 class="section-title">Aceitação dos Termos</h2>
-        <p>Ao utilizar a Yoshikawa Bot, você concorda integralmente com estes termos:</p>
-        <ul>
+        <p class="body-text">Ao utilizar a Yoshikawa Bot, você concorda integralmente com estes termos:</p>
+        <ul class="item-list">
           <li>Uso exclusivo para fins lícitos e em conformidade com as políticas do WhatsApp</li>
           <li>Proibido uso para atividades ilegais, spam ou violação de direitos</li>
           <li>Responsabilidade total do usuário pelo conteúdo e interações</li>
@@ -443,28 +500,29 @@
       </div>
 
       <div class="section" id="bots-filhos">
-        <p class="section-number">03</p>
+        <p class="section-num">03</p>
         <h2 class="section-title">Sistema de Bots Filhos</h2>
-        <p>Oferecemos a função de <strong>Bot Filho</strong> — uma bifurcação do bot principal que pode ser conectado ao seu próprio número.</p>
-        <div class="callout warn">
-          <p><strong>Responsabilidade:</strong> O usuário contratante é <strong>totalmente responsável</strong> pelo bot filho e seu uso. O criador original apenas fornece o sistema e não supervisiona sua utilização.</p>
+        <p class="body-text">Oferecemos a função de <strong>Bot Filho</strong> — uma bifurcação do bot principal que pode ser conectado ao seu próprio número.</p>
+        <div class="notice">
+          <div class="notice-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <p class="notice-text"><strong>Responsabilidade:</strong> O usuário contratante é <strong>totalmente responsável</strong> pelo bot filho e seu uso. O criador original apenas fornece o sistema e não supervisiona sua utilização.</p>
         </div>
       </div>
 
       <div class="section" id="vip">
-        <p class="section-number">04</p>
+        <p class="section-num">04</p>
         <h2 class="section-title">Sistema VIP e Loja</h2>
-        <p>O sistema de VIPs é <strong>mensal</strong> (não mais vitalício). Todos os preços de compras, aluguéis e serviços devem ser consultados diretamente pelo comando:</p>
-        <div class="callout">
-          <p><code>!loja</code></p>
-        </div>
+        <p class="body-text">O sistema de VIPs é <strong>mensal</strong> (não mais vitalício). Todos os preços de compras, aluguéis e serviços devem ser consultados diretamente pelo comando:</p>
+        <span class="code-block">!loja</span>
       </div>
 
       <div class="section" id="isencao">
-        <p class="section-number">05</p>
+        <p class="section-num">05</p>
         <h2 class="section-title">Isenção de Responsabilidade</h2>
-        <p>O criador original <strong>se responsabiliza exclusivamente pelo sistema sob sua posse</strong>. Não nos responsabilizamos por:</p>
-        <ul>
+        <p class="body-text">O criador original <strong>se responsabiliza exclusivamente pelo sistema sob sua posse</strong>. Não nos responsabilizamos por:</p>
+        <ul class="item-list">
           <li>Uso indevido pelos usuários</li>
           <li>Conteúdo gerado ou acessado através do bot</li>
           <li>Atividades em grupos ou bots filhos</li>
@@ -473,18 +531,18 @@
       </div>
 
       <div class="section" id="propriedade">
-        <p class="section-number">06</p>
+        <p class="section-num">06</p>
         <h2 class="section-title">Propriedade e Privacidade</h2>
-        <p>O código-fonte, funcionalidades e identidade são propriedade exclusiva do desenvolvedor. Processamos dados mínimos e temporários, exclusivamente para execução de comandos, em conformidade com a LGPD.</p>
+        <p class="body-text">O código-fonte, funcionalidades e identidade são propriedade exclusiva do desenvolvedor. Processamos dados mínimos e temporários, exclusivamente para execução de comandos, em conformidade com a LGPD.</p>
       </div>
 
       <div class="section" id="contato">
-        <p class="section-number">07</p>
+        <p class="section-num">07</p>
         <h2 class="section-title">Contato</h2>
-        <p>Para dúvidas, sugestões ou suporte técnico:</p>
+        <p class="body-text">Para dúvidas, sugestões ou suporte técnico:</p>
         <div class="contact-group">
-          <a href="https://wa.me/554896989549" class="contact-item">
-            <div class="contact-icon whatsapp">
+          <a href="https://wa.me/554896989549" class="contact-item" rel="noopener noreferrer">
+            <div class="contact-icon-wrap green">
               <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
               </svg>
@@ -495,16 +553,16 @@
             </div>
             <span class="contact-arrow">›</span>
           </a>
-          <a href="/cdn-cgi/l/email-protection#2e57415d4647454f594f714c415a6e5e5c415a414000434b" class="contact-item">
-            <div class="contact-icon email">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#6e6e73" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+          <a href="mailto:yoshikawa_bot@proton.me" class="contact-item">
+            <div class="contact-icon-wrap neutral">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="2" y="4" width="20" height="16" rx="2"/>
                 <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
               </svg>
             </div>
             <div>
               <div class="contact-label">E-mail</div>
-              <div class="contact-detail"><span class="__cf_email__" data-cfemail="6f16001c0706040e180e300d001b2f1f1d001b000141020a">[email&#160;protected]</span></div>
+              <div class="contact-detail">yoshikawa_bot@proton.me</div>
             </div>
             <span class="contact-arrow">›</span>
           </a>
@@ -512,15 +570,20 @@
       </div>
 
       <div class="section" id="isencao-final">
-        <p class="section-number">08</p>
+        <p class="section-num">08</p>
         <h2 class="section-title">Isenção Final</h2>
-        <p>A Yoshikawa é fornecida "no estado em que se encontra". O desenvolvedor se isenta de qualquer responsabilidade por mau uso, danos ou consequências adversas decorrentes de sua utilização. O uso é de inteira responsabilidade do usuário.</p>
+        <p class="body-text">A Yoshikawa é fornecida "no estado em que se encontra". O desenvolvedor se isenta de qualquer responsabilidade por mau uso, danos ou consequências adversas decorrentes de sua utilização. O uso é de inteira responsabilidade do usuário.</p>
       </div>
 
     </main>
   </div>
 
-  <footer>
-    <div class="footer-inner">
-      <p>© <span id="footer-year"></span> Yoshikawa Bot · Todos os direitos reservados.</p>
-    
+  <footer class="footer">
+    <p class="footer-text">
+      Yoshikawa ESM · Desenvolvida por <a href="https://github.com/kawa-lyansky" rel="noopener noreferrer"><span class="footer-credit">@kawalyansky</span></a><br>
+      <a href="https://yoshikawa-bot.github.io/site">Página principal</a> · <a href="https://akyronhost.com/" target="_blank" rel="noopener noreferrer">Akyron Host</a> · <a href="mailto:yoshikawa_bot@proton.me">yoshikawa_bot@proton.me</a>
+    </p>
+  </footer>
+
+</body>
+</html>
